@@ -1,10 +1,8 @@
-var vue = require('vue-loader')
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+var vue = require('vue-loader');
+var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: ['./src/main.js'],
   output: {
     path: './static',
     publicPath: '/static/',
@@ -38,14 +36,8 @@ module.exports = {
     presets: ['es2015'],
     plugins: ['transform-runtime']
   }
-}
+};
 
-module.exports.plugins = [
-  new HtmlWebpackPlugin({
-    template: 'index.html', // Load a custom template
-    inject: 'body' // Inject all scripts into the body
-  })
-]
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = [
@@ -59,12 +51,7 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false
       }
     }),
-    new webpack.optimize.OccurenceOrderPlugin(),
-
-    new HtmlWebpackPlugin({
-      template: 'index.html', // Load a custom template
-      inject: 'body' // Inject all scripts into the body
-    })
+    new webpack.optimize.OccurenceOrderPlugin()
   ]
 } else {
   module.exports.devtool = '#source-map'

@@ -1,7 +1,7 @@
 {
   "name": "hacker-news",
   "version": "0.0.1",
-  "description": "using vuejs to implement hackernews",
+  "description": "using vue.js to implement hackernews",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --quiet",
@@ -40,6 +40,7 @@
   "dependencies": {
     "es6-promise": "^3.0.2",
     "firebase": "^2.3.1",
+    "jquery": "^2.2.1",
     "vue": "^1.0.8",
     "vue-router": "^0.7.5"
   }
