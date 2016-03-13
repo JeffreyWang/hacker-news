@@ -1,19 +1,28 @@
 <template>
-    <div class="page-cover"
-         v-if="showMenu"
-         @click="showMenus">
-    </div>
-    <header :class="{'show':showMenu}">
-        <div class="hn-toolbar">
-            <div class="toolbar-nav"
-                 @click="openMenu">
-            </div>
-            <span v-text="pageType"></span>
+    <div class="mobile-header">
+        <div class="page-cover"
+             v-if="showMenu"
+             @click="showMenus">
         </div>
-    </header>
-    <hn-menu :show-menu="showMenu"
-             :tab-config="tabConfig">
-    </hn-menu>
+        <header :class="{'show':showMenu}" class="header">
+            <div class="hn-toolbar">
+                <div class="toolbar-nav"
+                     @click="openMenu">
+                </div>
+                <span v-text="pageType"></span>
+            </div>
+        </header>
+        <hn-menu :show-menu="showMenu"
+                 :tab-config="tabConfig">
+        </hn-menu>
+    </div>
+    <div class="pc-header">
+        <ul class="header">
+            <li v-for="tab in tabConfig" :class="{'active':tab.isActive}"v-cloak>
+                {{tab.displayName}}
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script type="text/ecmascript-6" lang="babel">
@@ -27,31 +36,37 @@
                     {
                         displayName:'Newest',
                         stateName:'newest',
+                        isActive:true,
                         iconClass:''
                     },
                     {
                         displayName:'Comments',
                         stateName:'comments',
+                        isActive:false,
                         iconClass:''
                     },
                     {
                         displayName:'Show',
                         stateName:'show',
+                        isActive:false,
                         iconClass:''
                     },
                     {
                         displayName:'Ask',
                         stateName:'ask',
+                        isActive:false,
                         iconClass:''
                     },
                     {
                         displayName:'Jobs',
                         stateName:'jobs',
+                        isActive:false,
                         iconClass:''
                     },
                     {
                         displayName:'Submit',
                         stateName:'submit',
+                        isActive:false,
                         iconClass:''
                     }
                 ]
@@ -73,7 +88,41 @@
     }
 </script>
 <style lang="sass">
-    header {
+    @media screen and (max-width:799px) {
+        .mobile-header {
+            display: block;
+        }
+        .pc-header{
+            display: none;
+        }
+    }
+
+    @media screen and (min-width:800px) {
+        .mobile-header {
+            display: none;
+        }
+        .pc-header{
+            display: block;
+        }
+    }
+
+    .pc-header{
+        ul{
+            line-height: 54px;
+            height: 54px;
+            font-size: 18px;
+            color: darkgrey;
+            li{
+                display: inline;
+                margin: 0 15px;
+            }
+            .active{
+                color: black;
+            }
+        }
+    }
+
+    .header {
         border-bottom: 1px solid #e8e8e8;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.95);
