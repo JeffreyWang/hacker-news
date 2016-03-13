@@ -1,15 +1,5 @@
 @import "variable";
 
-body {
-    height: 100%;
-    width: 100%;
-    font-size: 14px;
-    color: #313131;
-    overflow-x: hidden;
-    line-height: 1;
-    background:url('../assets/images/loading.gif') no-repeat center 250px;
-}
-
 .mt5 {
     margin-top: $gap;
 }

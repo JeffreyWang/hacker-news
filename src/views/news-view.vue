@@ -8,6 +8,7 @@
                 track-by="$index">
             </hn-item>
         </ul>
+        <loading :show-loading.sync="showLoading" show-msg="Loading..."></loading>
     </section>
 </template>
 
@@ -17,6 +18,7 @@
     export default {
         data (){
             return {
+                showLoading:false,
                 scroll: true,
                 items: [],
                 page: 1,
@@ -48,8 +50,10 @@
         },
         methods: {
             update () {
+                this.showLoading = true;
                 store.fetchItemsByPage(this.page).then(items => {
                     this.scroll = true;
+                    this.showLoading = false;
                     this.items = this.items.concat(items);
                 });
             },
@@ -66,7 +70,8 @@
             }
         },
         components: {
-            'hnItem': require('../components/hn-item.vue')
+            'hnItem': require('../components/hn-item.vue'),
+            'loading': require('../components/loading.vue')
         }
     }
 </script>
