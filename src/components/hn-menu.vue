@@ -3,7 +3,7 @@
         <hn-user></hn-user>
         <ul class="list-ul">
             <li v-for="tab in tabConfig" v-cloak
-                @click="tabNav(tab)">{{tabConfig.displayName}}</li>
+                @click="tabNav(tab)">{{tab.displayName}}</li>
         </ul>
     </section>
 </template>
@@ -11,7 +11,7 @@
 
     export default {
         replace:true,
-        props: ['showMenu','pageType','userName','profileUrl', 'tabConfig'],
+        props: ['showMenu', 'tabConfig'],
         components:{
             'hnUser':require('./hn-user.vue')
         },

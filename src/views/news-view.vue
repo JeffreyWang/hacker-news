@@ -21,8 +21,7 @@
                 showLoading:false,
                 scroll: true,
                 items: [],
-                page: 1,
-                limit: 20
+                page: 1
             }
         },
         route: {

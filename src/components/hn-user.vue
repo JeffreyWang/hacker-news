@@ -65,6 +65,10 @@
                 background: url("../assets/images/login.png") no-repeat left center;
                 background-size: 24px 24px;
             }
+            a{
+                color: black;
+                font-size: 16px;
+            }
         }
     }
 

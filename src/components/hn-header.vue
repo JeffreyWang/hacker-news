@@ -12,10 +12,7 @@
         </div>
     </header>
     <hn-menu :show-menu="showMenu"
-             :page-type="pageType"
-             :user-name="userName"
-             :tab-config="tabConfig"
-             :profile-url="profileUrl">
+             :tab-config="tabConfig">
     </hn-menu>
 </template>
 
@@ -26,36 +23,34 @@
         props: ['pageType','showMenu'],
         data (){
             return {
-                userName: '',
-                profileUrl: '',
                 tabConfig: [
                     {
-                        displayName:'new',
-                        stateName:'new',
+                        displayName:'Newest',
+                        stateName:'newest',
                         iconClass:''
                     },
                     {
-                        displayName:'comments',
+                        displayName:'Comments',
                         stateName:'comments',
                         iconClass:''
                     },
                     {
-                        displayName:'show',
+                        displayName:'Show',
                         stateName:'show',
                         iconClass:''
                     },
                     {
-                        displayName:'ask',
+                        displayName:'Ask',
                         stateName:'ask',
                         iconClass:''
                     },
                     {
-                        displayName:'jobs',
+                        displayName:'Jobs',
                         stateName:'jobs',
                         iconClass:''
                     },
                     {
-                        displayName:'submit',
+                        displayName:'Submit',
                         stateName:'submit',
                         iconClass:''
                     }
@@ -119,6 +114,7 @@
             height: 100%;
             line-height: 44px;
             font-size: 16px;
+            font-weight: 500;
             width: 100%;
             position: relative;
             z-index: 0;
