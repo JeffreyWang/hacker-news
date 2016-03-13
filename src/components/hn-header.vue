@@ -18,10 +18,14 @@
     </div>
     <div class="pc-header">
         <ul class="header">
-            <li v-for="tab in tabConfig" :class="{'active':tab.isActive}"v-cloak>
-                {{tab.displayName}}
+            <li v-for="tab in tabConfig">
+                <a href="javascript:;" :class="{'active':tab.isActive}" v-cloak>{{tab.displayName}}</a>
+            </li>
+            <li class="head-login">
+                <a href="javascript:;">Login</a>
             </li>
         </ul>
+
     </div>
 </template>
 
@@ -37,12 +41,6 @@
                         displayName:'Newest',
                         stateName:'newest',
                         isActive:true,
-                        iconClass:''
-                    },
-                    {
-                        displayName:'Comments',
-                        stateName:'comments',
-                        isActive:false,
                         iconClass:''
                     },
                     {
@@ -111,13 +109,22 @@
             line-height: 54px;
             height: 54px;
             font-size: 18px;
-            color: darkgrey;
             li{
                 display: inline;
                 margin: 0 15px;
+                a{
+                    color: darkgrey;
+                }
             }
             .active{
                 color: black;
+            }
+            .head-login{
+                float: right;
+                margin-right: 20px;
+                a{
+                    color: black;
+                }
             }
         }
     }

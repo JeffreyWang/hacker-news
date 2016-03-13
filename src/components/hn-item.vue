@@ -11,10 +11,10 @@
         <p class="subtext">
             <span v-show="showInfo" class="score-info">
                 {{item.score}} points by
-                <a :href="'#/user/' + item.by">{{item.by}}</a>
+                <a href="javascript:;">{{item.by}}</a>
             </span>
             <span class="comments-link" v-show="showInfo">
-                <a :href="'#/item/' + item.id">{{item.descendants}} {{item.descendants | pluralize 'comment'}}</a>
+                <a href="javascript:;">{{item.descendants}} {{item.descendants | pluralize 'comment'}}</a>
             </span>
         </p>
     </li>
