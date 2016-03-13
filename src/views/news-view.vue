@@ -56,7 +56,6 @@
                     this.items = this.items.concat(items);
                 });
             },
-            //滚动加载数据
             getScrollData (){
                 if (this.scroll) {
                     let totalHeight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());
