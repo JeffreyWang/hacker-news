@@ -25,7 +25,7 @@ router.beforeEach(function () {
 });
 
 router.redirect({
-    '*': '/news/1'
+    '*': '/news'
 });
 
 router.start(App, '#app');

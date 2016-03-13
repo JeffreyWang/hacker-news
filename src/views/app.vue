@@ -14,7 +14,7 @@
         data(){
             return {
                 showMenu: false,
-                tab: 'new'
+                tab: 'Newest'
             };
         },
 
@@ -26,5 +26,4 @@
 
 <style lang="sass">
     @import "../assets/scss/index.scss";
-
 </style>

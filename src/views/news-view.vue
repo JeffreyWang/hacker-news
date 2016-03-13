@@ -35,7 +35,7 @@
         },
         created () {
             store.on('topstories-updated', this.update);
-            let that  = this;
+            let that = this;
             $(window).on('scroll', () => {
                 that.getScrollData();
             });
@@ -70,3 +70,9 @@
         }
     }
 </script>
+
+<style lang="sass">
+    .posts-list {
+        background-color: white;
+    }
+</style>
